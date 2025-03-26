@@ -15,7 +15,7 @@ Preparations before entering the customer environment
 在進入客戶環境前的準備事項
 
 0. Fork the OpenShift-Automation github repo into your own repo (將 OpenShift Automation github repo fork 到自己的 repo 中)
-
+***hello***
 1. Install KVM to create a RHEL Bastion server (安裝 KVM 建立一個 RHEL Bastion server)
 
 2. Install ansible-builder on your local machine (在本地機器上安裝 ansible-builder)
