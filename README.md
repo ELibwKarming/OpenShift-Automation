@@ -17,8 +17,20 @@ Preparations before entering the customer environment
 0. Fork the OpenShift-Automation github repo into your own repo (將 OpenShift Automation github repo fork 到自己的 repo 中)
 
 1. Install KVM to create a RHEL Bastion server (安裝 KVM 建立一個 RHEL Bastion server)
+   1. Please ensure the ISO for installing virtual machine has been downloaded to your OS (RHEL)
+   2. Download the required rpm packages as the command below
+     ``` dnf install libvirt qemu-kvm virt-install virt-manager virt-viewer -y ```
+   3. Enable libvirtd service
+     ``` systemctl enable --now libvirt ```
+   4. Check the status of libvirtd service
+     ``` systemctl status libvirtd ```
+   5. Configure network bridging
+      - Please execute the command as below, and record the information of the NiC currently used by your OS (i.e. MAC address, ipv4 address, GW...)
+        ``` ip a ```
+      - Delete the NiC
+        ``` nmcli con delete [''] ```  
 
-2. Install ansible-builder on your local machine (在本地機器上安裝 ansible-builder)
+3. Install ansible-builder on your local machine (在本地機器上安裝 ansible-builder)
 ```
 yum install ansible-builder
 ```
